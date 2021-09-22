@@ -9,6 +9,7 @@ HOST-SUFFIX,music.163.com
 HOST-SUFFIX,interface.music.163.com
 HOST-SUFFIX,interface3.music.163.com
 HOST-SUFFIX,apm.music.163.com
+HOST-SUFFIX,api.iplay.163.com
 HOST-SUFFIX,apm3.music.163.com
 
 IP-CIDR,59.111.181.38/32
