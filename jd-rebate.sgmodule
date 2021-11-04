@@ -1,0 +1,7 @@
+#!name=JD-Rebate
+#!desc=京东购物比价/返利
+
+[Script]
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jf_Convert.js, requires-body=true, timeout=10, tag=京粉转链
+
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=1,script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价
