@@ -1,5 +1,5 @@
 #!name=网络防火墙
-#!desc=启用后，如果设备从"蜂窝网络"切换至"WiFi"，则断网15秒，Apple/Surge/bilibili/微信/TG/NetFlix除外。（隐藏通知版）
+#!desc=启用后，如果设备从"蜂窝网络"切换至"WiFi"，则断网15秒，Apple/Surge/bilibili/微信/TG/NetFlix/AmazonPrimeVideo除外。（隐藏通知版）
 #!system=ios
 
 [Script]
@@ -7,4 +7,4 @@
 防火墙(事件) = type=event,event-name=network-changed,script-path=https://raw.githubusercontent.com/uclinch/surge/master/NetworkFirewall/WiFi-Firewall.js
 
 [Rule]
-AND,((NOT,((OR,((USER-AGENT,Surge*), (RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list), (RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/WeChat.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list),(RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list),(RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list),(RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list))))), (SCRIPT,防火墙(规则))),REJECT-TINYGIF
+AND,((NOT,((OR,((USER-AGENT,Surge*), (RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Apple.list), (RULE-SET,https://raw.githubusercontent.com/NobyDa/Script/master/Surge/WeChat.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AmazonPrimeVideo/AmazonPrimeVideo.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list), (RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list))))), (SCRIPT,防火墙(规则))),REJECT-TINYGIF
