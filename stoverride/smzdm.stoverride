@@ -13,7 +13,7 @@ http:
     - zhiyou.m.smzdm.com
   script:
     - match: ^https?:\/\/app-api\.smzdm\.com\/util\/loading
-      name: 什么值得买_开屏去广告
+      name: "什么值得买_开屏去广告"
       type: response
       require-body: true
       timeout: 20
@@ -53,7 +53,7 @@ http:
       require-body: true
       timeout: 20
 script-providers:
-  什么值得买_开屏去广告:
+  "什么值得买_开屏去广告":
     url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_首页去广告:
