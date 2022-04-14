@@ -57,23 +57,23 @@ script-providers:
     url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_首页去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_好价去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_好价详情页去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_百科去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_搜索结果去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_搜索标签去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
   什么值得买_值会员权益中心banner去广告:
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+    url: https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/smzdm_remove_ads.js
     interval: 86400
