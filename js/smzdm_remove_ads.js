@@ -9,7 +9,7 @@ if ("undefined" != typeof $response) {
         // 去除APP启动广告
         case /^https?:\/\/app-api\.smzdm\.com\/util\/loading/.test(url):
             try {
-                let obj = $.toObj(body, {data: []})
+                let obj = $.toObj(body, { data: [] })
                 obj.data.forEach((element) => {
                     element.start_date = "2030-12-24 00:00:00";
                     element.end_date = "2030-12-24 23:59:59";
@@ -19,7 +19,121 @@ if ("undefined" != typeof $response) {
                 });
                 response = { body: $.toStr(obj) };
             } catch (err) {
-                logErr(`去除APP启动广告出现异常：${err}`);
+                $.logErr(`去除APP启动广告出现异常：${err}`);
+            }
+            break;
+        case /^https?:\/\/homepage-api\.smzdm\.com\/v3\/home/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                let component = [];
+                obj.data.component.forEach((element) => {
+                    if (element.zz_type === "banner") {
+                        let bannerList = element.zz_content.filter((banner) => {
+                            return banner.tag !== "广告";
+                        });
+                        element.zz_content = bannerList;
+                    }
+                    // 去除信息流中的广告
+                    else if (element.zz_type === "list") {
+                        let contentList = element.zz_content.filter((content) => {
+                            return content.zz_content.model_type !== "ads";
+                        });
+                        element.zz_content = contentList;
+                    }
+                    // 去除首页背景颜色
+                    else if (element.zz_type === "circular_banner") {
+                        element.zz_content.circular_banner_option.background = "1";
+                        element.zz_content.circular_banner_option.color_card = "#ffffff";
+                        element.zz_content.circular_banner_option.img = "";
+                    }
+                    // 最顶部的banner和红包不显示
+                    if (element.zz_type !== "top_banner" && element.zz_type !== "hongbao") {
+                        component.push(element);
+                    }
+                });
+
+                obj.data.component = component;
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`首页去广告出现异常：${err}`);
+            }
+            break;
+        // 去除好价广告
+        case /^https?:\/\/haojia-api\.smzdm\.com\/home\/list/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                let bigBanner = obj.data.banner.big_banner.filter((element) => {
+                    return element.ad_banner_id == "";
+                });
+                obj.data.banner.big_banner = bigBanner;
+                let rows = obj.data.rows.filter((element) => {
+                    return !element.hasOwnProperty("ad_banner_id");
+                });
+                // 红包相关
+                obj.data.banner.hongbao_banner = [];
+                obj.data.banner.module_banner.hongbao = {};
+                // 不显示皮肤
+                // obj.data.banner.skin = {};
+                obj.data.rows = rows;
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`好价去广告出现异常：${err}`);
+            }
+            break;
+        // 去除好价详情页广告
+        case /^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                obj.data.lanmu_qikan = {};
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`好价详情页去广告出现异常：${err}`);
+            }
+            break;
+        // 去除百科广告
+        case /^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                obj.data.rows = obj.data.rows.filter((element) => {
+                    return !element.hasOwnProperty("ad_banner_id") || element.ad_banner_id == "";
+                });
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`百科去广告出现异常：${err}`);
+            }
+            break;
+        // 去除搜索标签广告
+        case /^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                obj.data.hongbao = {};
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`搜索标签去广告出现异常：${err}`);
+            }
+            break;
+        // 去除搜索结果广告
+        case /^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                obj.data.rows = obj.data.rows.filter((element) => {
+                    return element.article_tag !== "广告";
+                });
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`搜索结果去广告出现异常：${err}`);
+            }
+            break;
+        // 去除值会员权益中心banner广告
+        case /^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner/.test(url):
+            try {
+                let obj = $.toObj(body, { data: [] })
+                obj.data.big_banner = obj.data.big_banner.filter((element) => {
+                    return element.logo_title !== "广告";
+                });
+                response = { body: $.toStr(obj) };
+            } catch (err) {
+                $.logErr(`值会员权益中心banner去广告出现异常：${err}`);
             }
             break;
         default:
