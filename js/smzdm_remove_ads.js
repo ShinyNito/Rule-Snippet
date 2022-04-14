@@ -1,10 +1,10 @@
-var url = $request.url;
-var body = $response.body;
 const scriptName = "什么值得买";
 const $ = new Env(scriptName)
 
 let response = null;
 if ("undefined" != typeof $response) {
+    var url = $request.url;
+    var body = $response.body;
     switch (true) {
         // 去除APP启动广告
         case /^https?:\/\/app-api\.smzdm\.com\/util\/loading/.test(url):
