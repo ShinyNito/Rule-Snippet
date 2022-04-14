@@ -5,7 +5,7 @@ const $ = new Env(scriptName)
 
 (() => {
     let response = null;
-    if (response) {
+    if ("undefined" != typeof $response) {
         switch (true) {
             // 去除APP启动广告
             case /^https?:\/\/app-api\.smzdm\.com\/util\/loading/.test(url):
