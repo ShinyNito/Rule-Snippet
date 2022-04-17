@@ -8,14 +8,14 @@ let storeItemMenusConfig = $.read('itemMenusConfig');
 const mainConfig = storeMainConfig ? JSON.parse(storeMainConfig) : {
 	isDebug: true,						//开启调试，会打印运行中部分日志
 	//个人中心配置，其中多数是可以直接在更多功能里直接移除
-	removeHomeVip: true,				//个人中心头像旁边的vip样式
-	removeHomeCreatorTask: true,		//个人中心创作者中心下方的轮播图
+	removeHomeVip: false,				//个人中心头像旁边的vip样式
+	removeHomeCreatorTask: false,		//个人中心创作者中心下方的轮播图
 
 	//微博详情页配置
 	removeRelate: false,			//相关推荐
-	removeGood: true,			//微博主好物种草
-	removeFollow: true,			//关注博主
-	modifyMenus: true,			//编辑上下文菜单
+	removeGood: false,			//微博主好物种草
+	removeFollow: false,			//关注博主
+	modifyMenus: false,			//编辑上下文菜单
 	removeRelateItem: true,	//评论区相关内容
 	removeRecommendItem: true,	//评论区推荐内容
 	removeRewardItem: true,	//微博详情页打赏模块
@@ -61,7 +61,7 @@ const itemMenusConfig = storeItemMenusConfig ? JSON.parse(storeItemMenusConfig) 
 	mblog_menus_shield:true,				//屏蔽
 	mblog_menus_report:true,				//投诉
 	mblog_menus_apeal:true,				//申诉
-	mblog_menus_home:true					//返回首页
+	mblog_menus_home:false					//返回首页
 }
 
 const modifyCardsUrls = ['/cardlist', '/page', 'video/community_tab', '/searchall'];
