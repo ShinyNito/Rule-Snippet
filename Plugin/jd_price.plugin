@@ -1,0 +1,10 @@
+#!name= 京东比价
+#!desc= 更新时间 2022-02-22 09:09
+#!author= ShinyNito
+
+[Script]
+#京东比价 (原yichahucha改写)
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js, requires-body=true, timeout=10, tag=京东比价
+
+[MITM]
+hostname = api.m.jd.com
