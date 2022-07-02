@@ -14,5 +14,9 @@ DOMAIN-SUFFIX, ip.taobao.com, reject
 "^https?:\/\/api\.weibo\.cn\/\d\/video\/machine\?gsid" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 "^https?:\/\/api\.weibo\.cn\/\d\/mfp\/dix\?gsid" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank.txt"
 
+[Script]
+weibo_main.js = type=http-response,requires-body=1,max-size=0,pattern=^https?://m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(unread_hot_timeline|extend|video_mixtimeline)|profile/(me|statuses)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item|search/(finder|container_timeline|container_discover)),script-path=https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js
+weibo_launch.js = type=http-response,requires-body=1,max-size=0,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),script-path=https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js
+
 [MITM]
 hostname = %APPEND% api.weibo.cn,mapi.weibo.com,*.uve.weibo.com
