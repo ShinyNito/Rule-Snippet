@@ -1,4 +1,4 @@
 #!name=Block HTTP3/QUIC
 #!desc=防止 YouTube 等使用 QUIC 导致速度不佳, 禁用 443 端口 UDP 流量（不包括国内）
 [Rule]
-AND,((PROTOCOL,UDP), (DEST-PORT,443), (NOT,((RULE-SET,https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list))),REJECT-NO-DROP
+AND,((PROTOCOL,UDP), (DEST-PORT,443), (NOT,((RULE-SET,https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list)))),REJECT-NO-DROP
