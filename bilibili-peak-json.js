@@ -17,15 +17,17 @@ if (!body.data) {
     console.log(`body:${$response.body}`);
     $notification.post(notifyTitle, url, "data字段错误");
 } else {
-    if (url.includes("resource/peak/download")) {
-        //循环data.resource 并将type为 'egg' 的元素中的list设置为[]
-        let resource = body.data.resource;
-        for (let i = 0; i < resource.length; i++) {
-            if (resource[i].type === "egg") {
-                resource[i].list = [];
-            }
+    if (url.includes("x/v2/splash")) {
+       //需要将list的中的每个元素begin_time改为1915027200 end_time改为1915027200 duration为0 
+       for (var i = 0; i < body.data.list.length; i++) {
+            body.data.list[i].begin_time = 1915027200;
+            body.data.list[i].end_time = 1915027200;
+            body.data.list[i].duration = 0;
         }
-        
+        //并且如果有show还需要删除
+        if (body.data.show) {
+            delete body.data.show;
+        }
     } else {
         $notification.post(notifyTitle, "路径匹配错误:", url);
     }
