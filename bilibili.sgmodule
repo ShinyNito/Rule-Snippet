@@ -7,4 +7,4 @@ hostname = %APPEND% app.bilibili.com, grpc.biliapi.net
 
 [Script]
 BiliBili_我的页面处理 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
-Bilibili_Peak_download = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/peak\/download,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/bilibili-peak-json.js
+Bilibili_Peak_download = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/bilibili-peak-json.js
