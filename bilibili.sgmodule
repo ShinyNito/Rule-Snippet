@@ -1,13 +1,9 @@
 #!name=bilibili我的页面处理
 #!desc=我的页面处理
 
-#[Rule]
-#URL-REGEX,^https:\/\/grpc\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJEC
-#URL-REGEX,^https:\/\/app\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJEC
-
-[Map Local]
-"^https:\/\/app\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
-"^https:\/\/grpc\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$" data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+[Rule]
+URL-REGEX,^https:\/\/grpc\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT // Added for: https://grpc.biliapi.net/bilibili.im.interface.v1.ImInterface/ShareList
+URL-REGEX,^https:\/\/app\.bilibili\.com\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT // Added for: https://app.bilibili.com/bilibili.im.interface.v1.ImInterface/ShareList
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net
