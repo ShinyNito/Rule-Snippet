@@ -3,6 +3,7 @@
 
 [Rule]
 URL-REGEX,^https:\/\/grpc\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT-DROP
+URL-REGEX,^https:\/\/app\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT-DROP
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net
