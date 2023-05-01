@@ -1,7 +1,11 @@
 #!name=网易云音乐净化
 #!desc=更新时间: 2023-03-16
 
+[URL Rewrite]
+^https?:\/\/httpdns.n.netease.com\/ - reject
+
 [Map Local]
+^https?:\/\/interface3?\.music\.163\.com\/eapi\/ad data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 # > 网易云_每日推荐Tips
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api/homepage/daily/song/elf/notice data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 # > 网易云_通用广告请求
@@ -36,4 +40,4 @@
 ^https?:\/\/interface(\d)?\.music\.163\.com\/w?e?api\/vipcenter/tspopup\/get data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 [MITM]
-hostname= %APPEND% interface*.music.163.com 
+hostname= %APPEND% interface*.music.163.com,httpdns.n.netease.com
