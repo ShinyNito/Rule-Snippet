@@ -6,5 +6,5 @@
 URL-REGEX,^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg$,REJECT
 URL-REGEX,^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$,REJECT
 
-MITM]
+[MITM]
 hostname = %APPEND% flowplus.meituan.net,s3plus.meituan.net
