@@ -39,6 +39,8 @@ if (!body.Data) {
         body.Data.FunctionButtonList = newFunctionButtonList;
         //删除SchoolText
         body.Data.SchoolText = "";
+        //删除SchoolImage
+        body.Data.SchoolImage = "";
         //删除Member
         body.Data.Member = {};
     }
