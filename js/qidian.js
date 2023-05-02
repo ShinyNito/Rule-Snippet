@@ -41,6 +41,8 @@ if (!body.Data) {
         body.Data.SchoolText = "";
         //删除SchoolImage
         body.Data.SchoolImage = "";
+        //删除SchoolUrl
+        body.Data.SchoolUrl = "";
         //删除Member
         body.Data.Member = {};
     }
