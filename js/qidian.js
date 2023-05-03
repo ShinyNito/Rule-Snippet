@@ -15,14 +15,7 @@ if (!body.Data) {
     console.log(`body:${$response.body}`);
     $notification.post(noticeTitle, "起点", "Data为空");
 } else {
-    if (url.includes("v1/adv/getadvlistbatch?positions=iosusercenter%2Ciosusercenter2") && method === getMethod) {
-        console.log('起点-iOS_用户中心');
-        // 将body.Data的每一个数组元素配置为空 {} body.Data = {};
-        body.Data.iosusercenter = [];
-        body.Data.iosusercenter2 = [];
-
-        console.log('成功');
-    } else if (url.includes("v3/user/getaccountpage") && method === getMethod) {
+    if (url.includes("v3/user/getaccountpage") && method === getMethod) {
         console.log('起点-账户页');
         if (!body.Data) {
             console.log(`body:${$response.body}`);
