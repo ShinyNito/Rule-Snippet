@@ -45,6 +45,15 @@ if (!body.Data) {
         body.Data.SchoolUrl = "";
         //删除Member
         body.Data.Member = {};
+    } else if (url.includes("v2/checkin/simpleinfo") && method === getMethod) {
+        console.log('起点-签到页');
+        if (!body.Data) {
+            console.log(`body:${$response.body}`);
+            $notification.post(noticeTitle, "起点", "Data为空");
+        }
+        //设置ShowCoinIcon为 0
+        body.Data.ShowCoinIcon = 0;
+        body.Data.ShowArrowIcon = 0;
     }
 }
 body = JSON.stringify(body);
