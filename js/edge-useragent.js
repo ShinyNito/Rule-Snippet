@@ -17,25 +17,20 @@
   if (platform === "Windows") {
     //windows 平台
     headers['User-Agent'] = windowsUa
-    headers['sec-ch-ua-mobile'] = '?0'
   } else if (platform === "Linux") {
     // Linux 平台
     headers['User-Agent'] = linuxUa
-    headers['sec-ch-ua-mobile'] = '?0'
   } else if (platform === "Android") {
     // Android 平台
     headers['User-Agent'] = androidUa
-    headers['sec-ch-ua-mobile'] = '?1'
   } else if (platform === "iOS") {
     // iOS 平台
     headers['User-Agent'] = iosUa
-    headers['sec-ch-ua-mobile'] = '?1'
   } else {
     // 通过 user-agent 判断平台
     if (userAgent.indexOf('Windows') !== -1) {
       //windows 平台
       headers['User-Agent'] = windowsUa
-      headers['sec-ch-ua-mobile'] = '?0'
     } else if (userAgent.indexOf('Android') !== -1) {
       headers['User-Agent'] = linuxUa
     } else if (userAgent.indexOf('iPhone') !== -1) {
