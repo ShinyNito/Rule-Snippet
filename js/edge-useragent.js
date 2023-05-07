@@ -13,8 +13,10 @@
   // console.log(userAgent)
   if (platform === "Windows") {
     //windows 平台
+    
+    delete headers['sec-ch-ua-full-version']
+    delete headers['sec-ch-ua-full-version-list']
     headers['User-Agent'] = windowsUa
-    delete headers['sec-ch-ua']
     headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
   } else if (platform === "Linux") {
     // Linux 平台
@@ -29,8 +31,10 @@
     // 通过 user-agent 判断平台
     if (userAgent.indexOf('Windows') !== -1) {
       //windows 平台
-      headers['User-Agent'] = windowsUa
+      delete headers['sec-ch-ua-full-version']
+      delete headers['sec-ch-ua-full-version-list']
       delete headers['sec-ch-ua']
+      headers['User-Agent'] = windowsUa
       headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
     } else if (userAgent.indexOf('Android') !== -1) {
       headers['User-Agent'] = linuxUa
