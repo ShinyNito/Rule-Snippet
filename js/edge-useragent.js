@@ -17,7 +17,6 @@
   } else if (platform === "Linux") {
     // Linux 平台
     headers['User-Agent'] = linuxUa
-    headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
   } else if (platform === "Android") {
     // Android 平台
     headers['User-Agent'] = androidUa
@@ -29,6 +28,7 @@
     if (userAgent.indexOf('Windows') !== -1) {
       //windows 平台
       headers['User-Agent'] = windowsUa
+      headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
     } else if (userAgent.indexOf('Android') !== -1) {
       headers['User-Agent'] = linuxUa
     } else if (userAgent.indexOf('iPhone') !== -1) {
