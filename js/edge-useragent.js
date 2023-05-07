@@ -17,6 +17,8 @@
     delete headers['sec-ch-ua-full-version']
     delete headers['sec-ch-ua-full-version-list']
     headers['User-Agent'] = windowsUa
+    headers['sec-ch-ua-mobile'] = '?0'
+    headers['sec-ch-ua-platform'] = 'Windows'
     headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
   } else if (platform === "Linux") {
     // Linux 平台
