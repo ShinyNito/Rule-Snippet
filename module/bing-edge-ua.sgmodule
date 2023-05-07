@@ -1,7 +1,11 @@
-#!name=Bing Edge UA
+#!name=New Bing for other browsers
+#!desc=Unlock browser restrictions for new bing AI search.
+
+[Header Rewrite]
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent Chrome\/ Edg/
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent Version\/[\d\.]+\sSafari\/[\d\.]+$ "AppleWebKit/537.36 Chrome/113.0 Safari/537.36 Edg/113.0"
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex sec-ch-ua "Google Chrome" "Microsoft Edge"
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex sec-ch-ua-full-version-list "Google Chrome" "Microsoft Edge"
 
 [MITM]
-hostname = %APPEND% *.bing.com, bing.com
-
-[Script]
-bing-edge-ua = type=http-request,pattern=^https:\/\/www\.bing\.com\/(search|new),script-path=https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/main/js/edge-useragent.js,requires-body=false
+hostname = %APPEND% www.bing.com
