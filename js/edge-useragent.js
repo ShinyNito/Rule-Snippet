@@ -29,7 +29,7 @@
   } else if (platform === "iOS") {
     // iOS 平台
     headers['User-Agent'] = iosUa
-    headers['sec-ch-ua-mobile'] = '?0'
+    headers['sec-ch-ua-mobile'] = '?1'
   } else {
     // 通过 user-agent 判断平台
     if (userAgent.indexOf('Windows') !== -1) {
