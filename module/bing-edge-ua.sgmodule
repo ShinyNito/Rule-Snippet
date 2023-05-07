@@ -3,8 +3,7 @@
 
 [Header Rewrite]
 ^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent Chrome\/ Edg/
-^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent Version\/[\d\.]+\sSafari\/[\d\.]+$ "AppleWebKit/537.36 Chrome/113.0 Safari/537.36 Edg/113.0"
-^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent Mobile\/\S+\sSafari\/[\d\.]+$ "AppleWebKit/537.36 Chrome/113.0 Safari/537.36 Edg/113.0"
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent (Version\/[\d\.]+)|(Mobile\/\S+)\sSafari\/[\d\.]+$ "AppleWebKit/537.36 Chrome/113.0 Safari/537.36 Edg/113.0"
 ^https:\/\/www\.bing\.com\/(search|new) header-replace-regex sec-ch-ua "Google Chrome" "Microsoft Edge"
 ^https:\/\/www\.bing\.com\/(search|new) header-replace-regex sec-ch-ua-full-version-list "Google Chrome" "Microsoft Edge"
 
