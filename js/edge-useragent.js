@@ -5,7 +5,7 @@
   const platform = headers['sec-ch-ua-platform']
   const userAgent = headers['User-Agent']
   delete headers['User-Agent']
-  delete headers['sec-ch-ua']
+  
   const windowsUa = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
   const linuxUa = 'Mozilla/5.0 (Linux; Android 10; Redmi K30 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
   const androidUa = 'Mozilla/5.0 (Linux; Android 10; Redmi K30 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
@@ -14,6 +14,7 @@
   if (platform === "Windows") {
     //windows 平台
     headers['User-Agent'] = windowsUa
+    delete headers['sec-ch-ua']
     headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
   } else if (platform === "Linux") {
     // Linux 平台
@@ -29,6 +30,7 @@
     if (userAgent.indexOf('Windows') !== -1) {
       //windows 平台
       headers['User-Agent'] = windowsUa
+      delete headers['sec-ch-ua']
       headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
     } else if (userAgent.indexOf('Android') !== -1) {
       headers['User-Agent'] = linuxUa
