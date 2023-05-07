@@ -6,6 +6,7 @@
   const userAgent = headers['User-Agent']
   delete headers['User-Agent']
   
+  const macOSUa = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_3_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/112.0.1722.71'
   const windowsUa = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
   const linuxUa = 'Mozilla/5.0 (Linux; Android 10; Redmi K30 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
   const androidUa = 'Mozilla/5.0 (Linux; Android 10; Redmi K30 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.35'
@@ -20,9 +21,15 @@
     headers['sec-ch-ua-mobile'] = '?0'
     headers['sec-ch-ua-platform'] = 'Windows'
     headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
-  } else if (platform === "Linux") {
+  } else if (platform === "macOS") {
     // Linux 平台
-    headers['User-Agent'] = linuxUa
+
+    delete headers['sec-ch-ua-full-version']
+    delete headers['sec-ch-ua-full-version-list']
+    headers['User-Agent'] = macOSUa
+    headers['sec-ch-ua-mobile'] = '?0'
+    headers['sec-ch-ua-platform'] = 'Windows'
+    headers['sec-ch-ua'] = '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"'
   } else if (platform === "Android") {
     // Android 平台
     headers['User-Agent'] = androidUa
