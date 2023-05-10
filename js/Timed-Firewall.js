@@ -7,7 +7,7 @@ let block = {
 if (readTimer) {
   const currentTime = Date.now();
   const markTime = parseInt(readTimer);
-  if (currentTime - markTime <= 15000) {
+  if (currentTime - markTime <= 10000) {
     block.matched = true;
     const addNum = JSON.stringify(parseInt(record || "0") + 1);
     const saveNum = $persistentStore.write(addNum, "Block_Num");
