@@ -2,8 +2,10 @@
 #!desc=屏蔽Bilibili快速分享
 
 [Rule]
-URL-REGEX,^https:\/\/grpc\.biliapi\.net\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT // Added for: https://grpc.biliapi.net/bilibili.im.interface.v1.ImInterface/ShareList
 URL-REGEX,^https:\/\/app\.bilibili\.com\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$,REJECT // Added for: https://app.bilibili.com/bilibili.im.interface.v1.ImInterface/ShareList
+
+[Map Local]
+^https:\/\/app\.bilibili\.com\/bilibili\.im\.interface\.v1\.ImInterface\/ShareList$ data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net
