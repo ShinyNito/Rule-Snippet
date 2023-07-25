@@ -13,4 +13,4 @@ DOMAIN,dns.weibo.cn,REJECT
 ^http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/httpdns/v2/d\?domain=([a-zA-Z0-9-_]+\.)+[a-zA-Z0-9-_]+$ - reject
 
 #Sina
-^^http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/v3/d\?appkey=[a-zA-Z0-9-_]+$ - reject
+^http://(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/v3/d\?appkey=[a-zA-Z0-9-_]+$ - reject
