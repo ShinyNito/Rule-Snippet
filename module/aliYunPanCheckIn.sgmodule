@@ -1,9 +1,0 @@
-#!name=阿里网盘签到 获取Token
-#!desc=阿里网盘签到 获取Token
-
-[Script] 
- # > 阿里云盘签到 https://auth.aliyundrive.com/v2/account/token 
- 阿里云盘签到cookie = requires-body=1,type=http-response,pattern=https:\/\/auth.aliyundrive.com\/v2\/account\/token,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js 
- 
-[MITM]
-hostname = %APPEND% auth.aliyundrive.com
