@@ -1,0 +1,16 @@
+#!name=Bilibili MCDN Proxy
+#!desc=将 MCDN v1/resource 视频及音轨请求转发至 Bilibili 代理；先补齐原站端口，保留签名和 Range。仅处理分片请求，无正文缓冲。
+#!version=1.0.0
+#!system=mac
+
+[General]
+force-http-engine-hosts = %APPEND% *.mcdn.bilivideo.cn:8000, *.mcdn.bilivideo.cn:8082
+
+[Rule]
+DOMAIN,proxy-tf-all-ws.bilivideo.com,DIRECT
+
+[Script]
+Bilibili.MCDN.Proxy.PortFix = type=http-request, pattern=^https?://[a-zA-Z0-9-]+\.mcdn\.bilivideo\.cn(?::(?:8000|8082))?/v1/resource/upgcxcode/, script-path=https://raw.githubusercontent.com/ShinyNito/Rule-Snippet/16218a3b2da7d2792f7e2ad8469619e475de0553/js/bilibili-mcdn-proxy.js, requires-body=false, engine=jsc, timeout=2
+
+[MITM]
+hostname = %APPEND% *.mcdn.bilivideo.cn, *.mcdn.bilivideo.cn:8082
