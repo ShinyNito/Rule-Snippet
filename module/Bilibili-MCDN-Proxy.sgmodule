@@ -1,12 +1,13 @@
 #!name=Bilibili MCDN Proxy
 #!desc=将 MCDN v1/resource 视频及音轨请求转发至 Bilibili 代理；先补齐原站端口，保留签名和 Range。仅处理分片请求，无正文缓冲。
-#!version=1.0.0
+#!version=1.0.1
 #!system=mac
 
 [General]
 force-http-engine-hosts = %APPEND% *.mcdn.bilivideo.cn:8000, *.mcdn.bilivideo.cn:8082
 
 [Rule]
+DOMAIN-SUFFIX,mcdn.bilivideo.cn,DIRECT
 DOMAIN,proxy-tf-all-ws.bilivideo.com,DIRECT
 
 [Script]
